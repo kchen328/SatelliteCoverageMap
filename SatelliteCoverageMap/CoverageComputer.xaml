@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="SatelliteCoverageMap.CoverageComputer">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Latitude (deg. N)" HorizontalOptions="Start" VerticalOptions="CenterAndExpand"/>
+            <Entry x:Name="latitude" Placeholder="-90 - 90"/>
+            
+            <Label Text="Longitude (deg. E)" HorizontalOptions="Start" VerticalOptions="CenterAndExpand"/>
+            <Entry x:Name="longitude" Placeholder="-180 - 180"/>
+            
+            <Label Text="Elevation" HorizontalOptions="Start" VerticalOptions="CenterAndExpand"/>
+            <Entry x:Name="elevation" Placeholder="rangeds"/>
+                
+            <Button x:Name="drawContour" Text="Draw Contour"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
