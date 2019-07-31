@@ -10,10 +10,10 @@
             
             <Label Text="Longitude (deg. E)" HorizontalOptions="Start" VerticalOptions="CenterAndExpand"/>
             <Entry x:Name="longitude" Placeholder="-180 - 180"/>
-            
-            <Label Text="Elevation" HorizontalOptions="Start" VerticalOptions="CenterAndExpand"/>
-            <Entry x:Name="elevation" Placeholder="rangeds"/>
-                
+
+            <Label Text="Beam Diameter (km)" HorizontalOptions="Start" VerticalOptions="CenterAndExpand"/>
+            <Entry x:Name="diameter"/>
+
             <Button x:Name="drawContour" Text="Draw Contour"/>
         </StackLayout>
     </ContentPage.Content>

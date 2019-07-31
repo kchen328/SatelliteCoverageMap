@@ -14,4 +14,15 @@
     <PackageReference Include="Xamarin.Essentials" Version="1.2.0" />
     <PackageReference Include="Xamarin.Forms.Maps" Version="4.1.0.618606" />
   </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="AssemblyInfo.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="CoverageComputer.xaml.cs">
+      <DependentUpon>CoverageComputer.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
 </Project>
