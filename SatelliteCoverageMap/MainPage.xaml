@@ -8,8 +8,14 @@
 
     <StackLayout>
         <!-- Place new controls here -->
-        <Label Text="Satellite Map Generator" HorizontalOptions="Center" VerticalOptions="CenterAndExpand"/>
-        <Button x:Name="start" Text="Start"/>
+        <Image Source="background.png" Aspect="AspectFit"/>
+        <Label Text="SATELLITE COVERAGE MAP"
+               HorizontalOptions="Center"
+               VerticalOptions="CenterAndExpand"
+               TextColor="FloralWhite"
+               FontSize="Medium"
+               FontAttributes="Bold"/>
+        <Button x:Name="start" Text="Start" BackgroundColor="Azure"/>
     </StackLayout>
 
 </ContentPage>

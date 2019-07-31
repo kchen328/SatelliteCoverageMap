@@ -10,7 +10,7 @@ namespace SatelliteCoverageMap
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new MainPage());
+            MainPage = new NavigationPage(new MainPage()) { BackgroundColor = Color.PaleTurquoise };
         }
 
         protected override void OnStart()

@@ -19,10 +19,19 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="AssemblyInfo.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <EmbeddedResource Include="Resources\background.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Update="CoverageComputer.xaml.cs">
       <DependentUpon>CoverageComputer.xaml</DependentUpon>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Resources\background.png" />
   </ItemGroup>
 </Project>
