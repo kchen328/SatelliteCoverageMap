@@ -5,9 +5,19 @@ namespace SatelliteCoverageMap
 {
     public partial class CoverageMap : ContentPage
     {
-        public CoverageMap()
+        private double Latitude { get; set; }
+        private double Longitude { get; set; }
+        private double Diameter { get; set; }
+
+        private CustomMap Map { get; set; }
+
+        public CoverageMap(double lat, double lon, double diameter)
         {
-            var map = new CustomMap()
+            Latitude = lat;
+            Longitude = lon;
+            Diameter = diameter;
+
+            Map = new CustomMap()
             {
                 MapType = MapType.Hybrid,
                 IsShowingUser = true,
@@ -16,22 +26,23 @@ namespace SatelliteCoverageMap
                 VerticalOptions = LayoutOptions.FillAndExpand
             };
 
-            DrawContours(map, new Position(35, -100), 2000);
+            DrawContours();
 
             var stack = new StackLayout { Spacing = 0 };
-            stack.Children.Add(map);
+            stack.Children.Add(Map);
             Content = stack;
         }
 
-        public void DrawContours(CustomMap map, Position position, double diameter)
+        public void DrawContours()
         {
+            Position position = new Position(Latitude, Longitude);
 
-            map.Circle = new CustomCircle
+            Map.Circle = new CustomCircle
             {
                 Position = position,
-                Radius = diameter / 2
+                Radius = (Diameter * 1000) / 2
             };
-            map.MoveToRegion(MapSpan.FromCenterAndRadius(position, Distance.FromMiles(1.0)));
+            Map.MoveToRegion(MapSpan.FromCenterAndRadius(position, Distance.FromMiles(1000)));
         }
     }
 }

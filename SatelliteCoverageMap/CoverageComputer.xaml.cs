@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 
 using Xamarin.Forms;
 
@@ -15,7 +14,11 @@ namespace SatelliteCoverageMap
 
         private async void drawContours_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new CoverageMap());
+            double lat = Double.Parse(latitude.Text);
+            double lon = Double.Parse(longitude.Text);
+            double dia = Double.Parse(diameter.Text);
+
+            await Navigation.PushAsync(new CoverageMap(lat, lon, dia));
         }
     }
 }
